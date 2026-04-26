@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awareness & Education - MediCheck Pediatric</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .awareness-header { text-align: center; margin-top: 100px; padding: 0 5%; }
+        .awareness-header h1 { font-size: 2.8rem; color: var(--primary); margin-bottom: 20px; }
+        .awareness-header p { color: var(--text-muted); font-size: 1.15rem; max-width: 850px; margin: 0 auto; line-height: 1.6; }
+        
+        .content-section { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        
+        .timeline-container { position: relative; padding: 40px 0; }
+        .timeline-container::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 4px; height: 100%; background: #e2e8f0; border-radius: 4px; }
+        .timeline-item { display: flex; justify-content: flex-end; padding-right: 50%; position: relative; margin-bottom: 40px; }
+        .timeline-item:nth-child(even) { justify-content: flex-start; padding-right: 0; padding-left: 50%; }
+        .timeline-content { background: var(--card-bg); padding: 30px; border-radius: 16px; box-shadow: var(--glass-shadow); width: 85%; position: relative; }
+        .timeline-item:nth-child(odd) .timeline-content { margin-right: 30px; border-right: 4px solid var(--primary); }
+        .timeline-item:nth-child(even) .timeline-content { margin-left: 30px; border-left: 4px solid var(--accent); }
+        
+        .timeline-dot { position: absolute; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; border-radius: 50%; background: var(--primary); border: 4px solid white; box-shadow: 0 0 0 4px rgba(11, 110, 153, 0.2); }
+        .timeline-item:nth-child(odd) .timeline-dot { right: -10px; }
+        .timeline-item:nth-child(even) .timeline-dot { left: -10px; background: var(--accent); box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.2); }
+        
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .info-card { background: var(--card-bg); padding: 30px; border-radius: 16px; box-shadow: var(--glass-shadow); transition: transform 0.3s; }
+        .info-card:hover { transform: translateY(-5px); }
+        .info-card i { font-size: 2.5rem; margin-bottom: 20px; color: var(--primary); }
+        
+        @media (max-width: 768px) {
+            .timeline-container::before { left: 20px; }
+            .timeline-item, .timeline-item:nth-child(even) { justify-content: flex-start; padding-left: 50px; padding-right: 0; }
+            .timeline-content { width: 100%; margin: 0 !important; border-right: none !important; border-left: 4px solid var(--primary) !important; }
+            .timeline-dot { left: -40px !important; right: auto !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="main-navbar">
+        <div class="nav-logo">
+            <i class="fa-solid fa-notes-medical" style="color:var(--primary);"></i>
+            <span style="font-weight: 700; color: var(--primary);">MediCheck India</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="prediction.html">Prediction</a></li>
+            <li><a href="awareness.html" class="active">Awareness</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="awareness-header">
+        <h1>Cancer Awareness & Education</h1>
+        <p>Understanding the history, biological mechanisms, and critical importance of early detection empowers communities to fight pediatric cancer effectively.</p>
+    </div>
+
+    <!-- 1. WHY AWARENESS MATTERS -->
+    <section class="content-section">
+        <div class="glass-panel text-center" style="padding: 40px;">
+            <h2 style="color: var(--danger); margin-bottom: 15px;"><i class="fa-solid fa-bullhorn"></i> Why Awareness is the First Line of Defense</h2>
+            <p style="font-size: 1.1rem; color: var(--text); line-height: 1.8;">
+                In India, over <strong>75,000 children</strong> are diagnosed with cancer annually. Unfortunately, due to a lack of awareness and delayed diagnosis, many children reach treatment centers in advanced stages. Childhood cancers are highly curable—often boasting survival rates above 80%—<strong>if</strong> they are detected and treated early. Awareness shatters the stigma and ensures parents recognize subtle red flags like persistent fevers, unexplained weight loss, and bone pain.
+            </p>
+        </div>
+    </section>
+
+    <!-- 2. HISTORY OF CANCER TIMELINE -->
+    <section class="content-section">
+        <h2 class="text-center" style="margin-bottom: 40px; font-size: 2.2rem;">The Historical Understanding of Cancer</h2>
+        
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <h3 style="color: var(--primary);">1600 BC - Ancient Egypt</h3>
+                    <p>The earliest known written record regarding cancer is the Edwin Smith Papyrus, an ancient Egyptian textbook on trauma surgery. It describes tumors of the breast, concluding with the grim note: <em>"There is no treatment."</em></p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <h3 style="color: var(--accent);">400 BC - Hippocrates</h3>
+                    <p>The Greek physician Hippocrates, the "Father of Medicine," coined the terms <em>carcinos</em> and <em>carcinoma</em> to describe non-ulcer forming and ulcer-forming tumors. The word translates to "crab," describing how swollen blood vessels around a tumor resembled crab legs.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <h3 style="color: var(--primary);">1940s - The Dawn of Chemotherapy</h3>
+                    <p>During WWII, researchers discovered that nitrogen mustard significantly reduced white blood cell counts. This led to the first use of chemotherapy for lymphomas, marking the beginning of pharmacological cancer treatments.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <h3 style="color: var(--accent);">Modern Era - Immunotherapy & AI</h3>
+                    <p>Today, survival rates for pediatric cancers like Acute Lymphoblastic Leukemia (ALL) have skyrocketed from 10% in the 1960s to over 90% today. Machine Learning (like this dashboard) and personalized medicine are leading the new frontier of early diagnosis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CRITICAL CONCEPTS -->
+    <section class="content-section">
+        <h2 class="text-center" style="margin-bottom: 30px;">Core Concepts Everyone Should Know</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <i class="fa-solid fa-dna"></i>
+                <h3>It's a Genetic Disease</h3>
+                <p>Cancer is caused by changes (mutations) to the DNA within cells. In children, these DNA changes often happen randomly during fetal development, rather than being linked to lifestyle factors like smoking or diet, which are common in adult cancers.</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-shield-virus"></i>
+                <h3>It is NOT Contagious</h3>
+                <p>A persistent myth in many communities is that cancer can be caught like a cold. Cancer is absolutely non-communicable. Children with cancer are safe to play with, hug, and be around.</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-user-doctor"></i>
+                <h3>Pediatric vs Adult Cancer</h3>
+                <p>Childhood cancers often respond much better to treatments like chemotherapy compared to adult cancers. Children’s bodies recover faster, which is why aggressive treatments are often highly successful.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="main-footer" style="margin-top: 60px;">
+        <div style="margin-bottom:15px; font-weight:600; color:var(--primary);">MediCheck Pediatric Dashboard</div>
+        <p>👉 This system is for educational and awareness purposes only. It is not a substitute for professional medical advice.</p>
+    </footer>
+
+</body>
+</html>

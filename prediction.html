@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction - MediCheck Pediatric</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="main-navbar">
+        <div class="nav-logo">
+            <i class="fa-solid fa-notes-medical"></i>
+            <span>MediCheck India</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="prediction.html" class="active">Prediction</a></li>
+            <li><a href="awareness.html">Awareness</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="dashboard-container" style="margin-top: 80px;">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <h2>Pediatric Early Detection Tool</h2>
+            <p class="subtitle">Symptom Correlation & Differential Diagnosis Dashboard</p>
+        </header>
+
+        <main class="dashboard-main">
+            <!-- Left panel: Symptoms Checklist -->
+            <section class="panel symptoms-panel glass-panel">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-clipboard-list"></i> Clinical Observations</h2>
+                    <p>Select age group and observed symptoms:</p>
+                    <button id="reset-btn" class="secondary-btn"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+                </div>
+                
+                <div class="age-group-selector">
+                    <h3><i class="fa-solid fa-child"></i> Patient Age Group</h3>
+                    <div class="age-chips">
+                        <label class="age-chip">
+                            <input type="radio" name="age-group" value="0-3">
+                            <span>0-3 Years</span>
+                        </label>
+                        <label class="age-chip">
+                            <input type="radio" name="age-group" value="3-6" checked>
+                            <span>3-6 Years</span>
+                        </label>
+                        <label class="age-chip">
+                            <input type="radio" name="age-group" value="6-10">
+                            <span>6-10 Years</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="symptoms-list" id="symptoms-list">
+                    <!-- Dynamic generation in JS -->
+                </div>
+            </section>
+
+            <!-- Right panel: Results and Analysis -->
+            <section class="panel analysis-panel glass-panel">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-chart-pie"></i> Diagnostic Analysis</h2>
+                </div>
+
+                <div class="analysis-content">
+                    <div class="risk-meter-container">
+                        <h3>Malignancy Overlap Index</h3>
+                        <p class="info-text">Prediction calculates Low/Medium/High urgency. Not a death prediction or final medical diagnosis.</p>
+                        
+                        <div class="gauge-wrapper">
+                            <svg class="gauge" viewBox="0 0 100 50">
+                                <path class="gauge-bg" d="M 10,50 A 40,40 0 0,1 90,50" />
+                                <path class="gauge-fill" id="gauge-fill" d="M 10,50 A 40,40 0 0,1 90,50" />
+                            </svg>
+                            <div class="gauge-value" id="gauge-value">0%</div>
+                        </div>
+                        <div class="risk-label" id="risk-label" style="font-weight:700; margin-top:10px;">Low Risk</div>
+                    </div>
+
+                    <!-- EXPLAINABLE AI SECTION -->
+                    <div class="explainable-ai-container">
+                        <h3><i class="fa-solid fa-brain"></i> Explainable AI Breakdown</h3>
+                        <p class="info-text">Top contributing symptoms evaluated by the Unbiased ML Model:</p>
+                        <div class="feature-importance" id="feature-importance">
+                            <div class="empty-state" style="margin-top:10px; padding:15px;">
+                                <p style="font-size: 0.9rem; color: #666;">Provide symptoms to see the model explanation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="differential-diagnosis-container" style="margin-top:30px;">
+                        <h3><i class="fa-solid fa-viruses"></i> Differential Diagnoses</h3>
+                        <p class="info-text">More common, benign conditions sharing these symptoms. These are frequently investigated first by pediatricians.</p>
+                        
+                        <div class="disease-list" id="disease-list">
+                            <!-- Filled dynamically -->
+                            <div class="empty-state">
+                                <i class="fa-solid fa-hand-pointer"></i>
+                                <p>Select symptoms to view potential diagnoses.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conclusion Panel -->
+                    <div class="conclusion-panel" id="conclusion-panel" style="display:none; margin-top:30px; background:var(--secondary); border-radius:12px; padding:20px;">
+                        <h3><i class="fa-solid fa-clipboard-user"></i> Summary & Next Steps</h3>
+                        <p id="conclusion-text" style="color:var(--text); font-size:0.95rem; line-height:1.5;">...</p>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="main-footer">
+        <p>👉 This system is for educational and awareness purposes only. It is not a substitute for professional medical advice.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

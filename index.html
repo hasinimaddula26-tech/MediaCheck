@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Early Detection of Childhood Cancer - India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Highcharts for Interactive Map -->
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/mapdata/countries/in/custom/in-all-disputed.js"></script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="main-navbar">
+        <div class="nav-logo">
+            <i class="fa-solid fa-notes-medical" style="color:var(--primary);"></i>
+            <span style="font-weight: 700; color: var(--primary);">MediCheck India</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="prediction.html">Prediction</a></li>
+            <li><a href="awareness.html">Awareness</a></li>
+            <li><a href="#help">Help</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Early Detection of Childhood Cancer</h1>
+            <p>Diagnosing cancer early in children significantly increases the survival rate. Our AI-driven tool empowers families and healthcare workers in India with timely risk assessment and guidance.</p>
+            <div class="trust-badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>This system uses an unbiased machine learning model trained on diverse diagnostic data.</span>
+            </div>
+            <a href="prediction.html" class="cta-button">Start Free Symptom Check <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image">
+            <img src="./images/hero.png" alt="Doctor providing care to a child" style="object-fit: cover;">
+        </div>
+    </section>
+
+    <!-- 3. UNBIASED AI SECTION -->
+    <section class="unbiased-ai-section glass-panel">
+        <div class="section-title text-center">
+            <h2><i class="fa-solid fa-scale-balanced" style="color: var(--primary);"></i> Fair & Unbiased AI Assessment</h2>
+        </div>
+        <div class="ai-features">
+            <div class="ai-card">
+                <i class="fa-solid fa-earth-asia" style="color: var(--accent);"></i>
+                <h3>Universal Baseline</h3>
+                <p>Features are evaluated completely free of gender, caste, or regional biases.</p>
+            </div>
+            <div class="ai-card">
+                <i class="fa-solid fa-microscope" style="color: var(--warning);"></i>
+                <h3>Symptom Correlated</h3>
+                <p>Relies strictly on clinical symptoms and age demographics.</p>
+            </div>
+            <div class="ai-card">
+                <i class="fa-solid fa-hand-holding-medical" style="color: var(--primary);"></i>
+                <h3>Awareness Focused</h3>
+                <p>This tool is for awareness, not a final medical diagnosis. Always consult a pediatrician.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 & 5. AWARENESS AND STATISTICS SECTION -->
+    <section class="awareness-section">
+        <div class="grid-2">
+            <div class="awareness-text">
+                <h2>Childhood Cancer in India</h2>
+                <p>Each year, thousands of children are diagnosed with cancer in India. Due to limited awareness and lack of specialized pediatric oncology centers in rural areas, many cases are caught in the late stages.</p>
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <h4 style="color: var(--danger);">~75,000</h4>
+                        <p>Estimated cases yearly in India</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4 style="color: var(--accent);">>80%</h4>
+                        <p>Survival Rate if caught early</p>
+                    </div>
+                </div>
+            </div>
+            <div class="awareness-images">
+                <img src="./images/awareness.png" alt="Pediatric research" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; object-fit: cover; aspect-ratio: 16/9;">
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. INTERACTIVE INDIA MAP SECTION -->
+    <section class="map-section glass-panel">
+        <h2>Regional Statistics & Awareness</h2>
+        <p class="text-center" style="margin-bottom: 20px;">Click on a state to view simulated regional diagnostic timelines.</p>
+        <div class="map-container" style="display:flex; gap:20px; flex-wrap:wrap;">
+            <div id="india-map" style="flex: 2; height: 500px; min-width:300px; background: transparent;"></div>
+            <div id="state-info" style="flex: 1; padding: 20px; background: white; border-radius: 12px; min-width:300px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <h3 id="info-state-name" style="color:var(--primary); margin-top:0;">Select a State</h3>
+                <div style="margin-top:20px;">
+                    <p style="color:#666;"><strong>Est. Annual Cases:</strong> <span id="info-cases">-</span></p>
+                    <p style="color:#666;"><strong>Avg. Diagnosis Time:</strong> <span id="info-time">-</span></p>
+                    <p style="color:#666;"><strong>Risk Factor:</strong> <span id="info-risk">-</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CAUSES SECTION -->
+    <section class="causes-section" id="help">
+        <h2 class="text-center">Understanding the Factors</h2>
+        <div class="causes-grid">
+            <div class="cause-item">
+                <div class="cause-icon" style="background:#ffedd5; color:var(--warning);"><i class="fa-solid fa-smog"></i></div>
+                <h4>Environmental Exposure</h4>
+                <p>Air pollution, heavy metals, and radiation in certain urban/industrial zones.</p>
+            </div>
+            <div class="cause-item">
+                <div class="cause-icon" style="background:#dbeafe; color:var(--primary);"><i class="fa-solid fa-dna"></i></div>
+                <h4>Genetic Predisposition</h4>
+                <p>Inherited mutations or syndromes like Down Syndrome increase susceptibility.</p>
+            </div>
+            <div class="cause-item">
+                <div class="cause-icon" style="background:#fee2e2; color:var(--danger);"><i class="fa-solid fa-industry"></i></div>
+                <h4>Industrial Pollution</h4>
+                <p>Runoff entering water tables impacting immune system development in youths.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. GALLERY SECTION -->
+    <section class="gallery-section">
+        <img src="./images/gallery1.png" alt="Hopeful healing">
+        <img src="./images/gallery2.png" alt="Family holding hands">
+        <img src="./images/gallery3.png" alt="Pediatric care">
+    </section>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="main-footer" id="contact">
+        <div style="margin-bottom:15px; font-weight:600; color:var(--primary);">MediCheck Pediatric Dashboard</div>
+        <p>👉 This system is for educational and awareness purposes only. It is not a substitute for professional medical advice.</p>
+    </footer>
+
+    <script>
+        // Highcharts Interactive India Map Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            // Simulated state data
+            const simData = [
+                ['andaman and nicobar', 80, '1.5 weeks', 'Low'],
+                ['andhra pradesh', 8500, '3.8 weeks', 'High'],
+                ['arunanchal pradesh', 400, '2.0 weeks', 'Low'],
+                ['assam', 3500, '2.5 weeks', 'Medium'],
+                ['bihar', 15000, '5.0 weeks', 'High'],
+                ['chandigarh', 500, '1.2 weeks', 'Low'],
+                ['chhattisgarh', 3100, '2.6 weeks', 'Medium'],
+                ['dadara and nagar havelli', 120, '1.8 weeks', 'Low'],
+                ['daman and diu', 120, '1.8 weeks', 'Low'],
+                ['nct of delhi', 4100, '2.1 weeks', 'Medium'],
+                ['goa', 200, '1.5 weeks', 'Low'],
+                ['gujarat', 7800, '3.1 weeks', 'Medium'],
+                ['haryana', 3900, '2.4 weeks', 'Medium'],
+                ['himachal pradesh', 800, '1.9 weeks', 'Low'],
+                ['jammu and kashmir', 1590, '2.7 weeks', 'Medium'],
+                ['jharkhand', 4200, '3.5 weeks', 'High'],
+                ['karnataka', 7500, '2.8 weeks', 'Medium'],
+                ['kerala', 3200, '1.4 weeks', 'Low'],
+                ['lakshadweep', 15, '1.0 weeks', 'Low'],
+                ['madhya pradesh', 9200, '4.1 weeks', 'High'],
+                ['maharashtra', 12000, '3.2 weeks', 'High'],
+                ['manipur', 350, '2.1 weeks', 'Low'],
+                ['meghalaya', 420, '2.3 weeks', 'Low'],
+                ['mizoram', 180, '1.7 weeks', 'Low'],
+                ['nagaland', 250, '2.0 weeks', 'Low'],
+                ['odisha', 5600, '3.4 weeks', 'Medium'],
+                ['puducherry', 300, '1.3 weeks', 'Low'],
+                ['punjab', 4500, '2.7 weeks', 'Medium'],
+                ['rajasthan', 8200, '4.5 weeks', 'High'],
+                ['sikkim', 120, '1.6 weeks', 'Low'],
+                ['tamil nadu', 8900, '2.5 weeks', 'Medium'],
+                ['telangana', 4800, '3.0 weeks', 'Medium'],
+                ['tripura', 460, '2.2 weeks', 'Low'],
+                ['uttar pradesh', 18500, '5.1 weeks', 'High'],
+                ['uttarakhand', 1200, '2.4 weeks', 'Low'],
+                ['west bengal', 10500, '4.2 weeks', 'High']
+            ];
+
+            const mapDataForChart = simData.map(d => ({ 'hc-key': d[0], value: d[1] }));
+
+            Highcharts.mapChart('india-map', {
+                chart: { map: 'countries/in/custom/in-all-disputed', backgroundColor: 'transparent' },
+                title: { text: '' },
+                mapNavigation: {
+                    enabled: false,
+                    enableMouseWheelZoom: false
+                },
+                colorAxis: {
+                    min: 0,
+                    minColor: '#E3F2FD',
+                    maxColor: '#0B6E99'
+                },
+                plotOptions: {
+                    series: {
+                        point: {
+                            events: {
+                                click: function() {
+                                    const code = this['hc-key'];
+                                    const name = this.name;
+                                    const matched = simData.find(s => s[0] === code);
+                                    
+                                    document.getElementById('info-state-name').innerText = name;
+                                    if(matched) {
+                                        document.getElementById('info-cases').innerText = matched[1].toLocaleString();
+                                        document.getElementById('info-time').innerText = matched[2];
+                                        document.getElementById('info-risk').innerText = matched[3];
+                                        document.getElementById('info-risk').style.color = matched[3] === 'High' ? 'var(--danger)' : (matched[3] === 'Medium' ? 'var(--warning)' : 'var(--accent)');
+                                    } else {
+                                        document.getElementById('info-cases').innerText = "Data unavailable";
+                                        document.getElementById('info-time').innerText = "Data unavailable";
+                                        document.getElementById('info-risk').innerText = "Unknown";
+                                        document.getElementById('info-risk').style.color = "#666";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    data: mapDataForChart,
+                    name: 'Simulated Cases',
+                    states: { hover: { color: '#FF9800' } },
+                    dataLabels: { enabled: false }
+                }]
+            });
+        });
+    </script>
+</body>
+</html>

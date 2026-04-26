@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - MediCheck Pediatric</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Specific Help Page Styles */
+        .help-header { text-align: center; margin-top: 100px; padding: 0 5%; }
+        .help-header h1 { font-size: 2.5rem; color: var(--primary); }
+        .help-header p { color: var(--text-muted); font-size: 1.1rem; margin-top: 10px; }
+        
+        .guidance-steps { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+        .step-card { flex: 1; min-width: 250px; background: var(--card-bg); padding: 20px; border-radius: 12px; box-shadow: var(--glass-shadow); border-top: 4px solid var(--accent); }
+        .step-card h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; color: var(--text); }
+        .step-card .step-num { background: var(--primary); color: white; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.9rem; font-weight: bold; }
+
+        .locator-container { display: flex; flex-direction: column; gap: 20px; }
+        .filters-bar { display: flex; gap: 15px; padding: 15px; background: rgba(11, 110, 153, 0.05); border-radius: 12px; flex-wrap: wrap; align-items: center; }
+        .filters-bar select { padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-family: inherit; outline: none; }
+        
+        .hospital-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 10px; }
+        .hospital-card { background: var(--card-bg); border-radius: 12px; padding: 20px; box-shadow: var(--glass-shadow); transition: transform 0.2s; border-left: 5px solid var(--primary); }
+        .hospital-card:hover { transform: translateY(-3px); }
+        .hospital-card h4 { font-size: 1.1rem; color: var(--text); margin-bottom: 5px; }
+        .hospital-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 5px; }
+        .h-badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-top: 10px; }
+        .badge-oncology { background: #e8f5e9; color: var(--accent); }
+        
+        .emergency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .emergency-card { background: var(--danger); color: white; border-radius: 16px; padding: 25px; display: flex; justify-content: space-between; align-items: center; }
+        .emergency-card h3 { color: white; margin-bottom: 5px; }
+        .emergency-card p { font-size: 0.9rem; opacity: 0.9; }
+        .call-btn { background: white; color: var(--danger); padding: 12px 24px; border-radius: 50px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; }
+        .call-btn:hover { transform: scale(1.05); }
+
+        .ngo-card { background: var(--card-bg); border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; display: flex; gap: 15px; align-items: center; }
+        .ngo-icon { font-size: 2rem; color: var(--warning); }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="main-navbar">
+        <div class="nav-logo">
+            <i class="fa-solid fa-notes-medical" style="color:var(--primary);"></i>
+            <span style="font-weight: 700; color: var(--primary);">MediCheck India</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="prediction.html">Prediction</a></li>
+            <li><a href="awareness.html">Awareness</a></li>
+            <li><a href="help.html" class="active">Help</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="help-header">
+        <h1>Patient Help & Support Network</h1>
+        <p>Find nearby specialized hospitals, emergency contacts, and guidance on how to safely proceed if symptoms are detected.</p>
+    </div>
+
+    <!-- 1. GUIDANCE SECTION -->
+    <section class="glass-panel">
+        <h2><i class="fa-solid fa-shoe-prints"></i> Recommended Steps</h2>
+        <div class="guidance-steps">
+            <div class="step-card">
+                <h3><span class="step-num">1</span> Do Not Panic</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Many cancer-like symptoms overlap heavily with common childhood viral infections, growth pains, or minor injuries. Stay calm.</p>
+            </div>
+            <div class="step-card">
+                <h3><span class="step-num">2</span> Record Observations</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Log the exact duration of the fever, pain, or lumps. Pediatricians rely heavily on timelines to rule out standard viruses.</p>
+            </div>
+            <div class="step-card">
+                <h3><span class="step-num">3</span> Primary Checkup</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Visit your regular pediatrician first. They will initiate standard Complete Blood Count (CBC) tests if they deem it necessary.</p>
+            </div>
+            <div class="step-card">
+                <h3><span class="step-num">4</span> Specialist Referral</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Only if tests show irregularities will you be formally referred to a Pediatric Oncologist at a specialized facility below.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. EMERGENCY SUPPORT -->
+    <section class="glass-panel" style="background: rgba(229, 57, 53, 0.05); border-color: rgba(229,57,53,0.2);">
+        <h2 style="color: var(--danger);"><i class="fa-solid fa-phone-volume"></i> Emergency & National Helplines</h2>
+        <div class="emergency-grid" style="margin-top:20px;">
+            <div class="emergency-card">
+                <div>
+                    <h3>Health Helpline (India)</h3>
+                    <p>Government Medical Advice Helpline</p>
+                    <div style="font-size: 1.5rem; font-weight:700; margin-top:5px;">104</div>
+                </div>
+                <a href="tel:104" class="call-btn"><i class="fa-solid fa-phone"></i> Call Now</a>
+            </div>
+            <div class="emergency-card" style="background: var(--warning);">
+                <div>
+                    <h3>National Cancer Grid</h3>
+                    <p>Oncology Support & Guidance</p>
+                    <div style="font-size: 1.5rem; font-weight:700; margin-top:5px;">1800-22-1951</div>
+                </div>
+                <a href="tel:1800221951" class="call-btn" style="color: var(--warning);"><i class="fa-solid fa-phone"></i> Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. HOSPITAL LOCATOR -->
+    <section class="glass-panel">
+        <h2><i class="fa-solid fa-hospital"></i> Government & Oncology Centers</h2>
+        <p class="info-text" style="margin-bottom:20px;">Find nearby verifiable facilities capable of pediatric blood diagnostics and oncology referrals.</p>
+        
+        <div class="locator-container">
+            <div class="filters-bar">
+                <strong><i class="fa-solid fa-filter"></i> Filters:</strong>
+                <select id="distance-filter">
+                    <option value="999">Any Distance</option>
+                    <option value="10">Under 10 km</option>
+                    <option value="50">Under 50 km</option>
+                    <option value="100">Under 100 km</option>
+                </select>
+                <select id="rating-filter">
+                    <option value="0">Any Rating</option>
+                    <option value="4.0">4.0+ Stars</option>
+                    <option value="4.5">4.5+ Stars</option>
+                </select>
+                <button class="cta-button" style="padding: 10px 20px; margin-left:auto;" id="view-toggle" data-view="list"><i class="fa-solid fa-map"></i> Toggle Map View</button>
+            </div>
+
+            <!-- List View -->
+            <div class="hospital-list" id="hospital-list">
+                <!-- Dynamically populated via JS -->
+            </div>
+
+            <!-- Interactive Map View -->
+            <div id="map-view" style="display:none; height:400px; width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid #cbd5e1;"></div>
+        </div>
+    </section>
+
+    <!-- 4. NGOs & SUPPORT -->
+    <section class="glass-panel">
+        <h2><i class="fa-solid fa-hand-holding-heart" style="color: var(--accent);"></i> Verified Patient Support Organizations</h2>
+        <div class="guidance-steps" style="margin-top:20px;">
+            
+            <div class="ngo-card">
+                <div class="ngo-icon"><i class="fa-solid fa-bowl-food"></i></div>
+                <div>
+                    <h4 style="color:var(--text); margin-bottom:5px;">Cuddles Foundation</h4>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Provides holistic nutritional support directly to children undergoing cancer treatment in Indian govt hospitals.</p>
+                </div>
+            </div>
+
+            <div class="ngo-card">
+                <div class="ngo-icon"><i class="fa-solid fa-house-chimney-medical"></i></div>
+                <div>
+                    <h4 style="color:var(--text); margin-bottom:5px;">St. Jude India ChildCare Centers</h4>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Offers entirely free housing, transport, and counseling for rural families traveling for their child's treatment.</p>
+                </div>
+            </div>
+
+            <div class="ngo-card">
+                <div class="ngo-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                <div>
+                    <h4 style="color:var(--text); margin-bottom:5px;">Indian Cancer Society</h4>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Assists with financial aid applications, emotional support networks, and early detection camps.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="main-footer" id="contact">
+        <div style="margin-bottom:15px; font-weight:600; color:var(--primary);">MediCheck Pediatric Dashboard</div>
+        <p>👉 This system is for educational and awareness purposes only. It is not a substitute for professional medical advice.</p>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjpBy0zdDeWtOzU5Y4uZHDKcXjxflxjiY&libraries=places,geometry"></script>
+    <script src="help.js"></script>
+</body>
+</html>

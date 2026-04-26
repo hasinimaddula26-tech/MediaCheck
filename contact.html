@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & FAQ - MediCheck Pediatric</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-header { text-align: center; margin-top: 100px; padding: 0 5%; }
+        .contact-header h1 { font-size: 2.5rem; color: var(--primary); }
+        .contact-header p { color: var(--text-muted); font-size: 1.1rem; max-width: 800px; margin: 15px auto; line-height: 1.6; }
+        
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        
+        .contact-form { display: flex; flex-direction: column; gap: 20px; }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
+        .form-group label { font-weight: 500; color: var(--text); font-size: 0.95rem; }
+        .form-group input, .form-group textarea { padding: 15px; border: 1px solid #cbd5e1; border-radius: 12px; font-family: inherit; font-size: 1rem; outline: none; transition: border-color 0.2s; background: rgba(255,255,255,0.8); }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
+        
+        .support-info { display: flex; flex-direction: column; gap: 30px; }
+        .info-card { display: flex; align-items: flex-start; gap: 20px; background: rgba(11, 110, 153, 0.05); padding: 25px; border-radius: 16px; border-left: 4px solid var(--primary); }
+        .info-card i { font-size: 2rem; color: var(--primary); }
+        .info-card h4 { color: var(--text); font-size: 1.2rem; margin-bottom: 5px; }
+        .info-card p { color: var(--text-muted); font-size: 0.95rem; }
+        
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-btn { width: 45px; height: 45px; border-radius: 50%; background: var(--secondary); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; transition: 0.3s; }
+        .social-btn:hover { background: var(--primary); color: white; transform: translateY(-3px); }
+
+        .faq-section { display: flex; flex-direction: column; gap: 15px; }
+        .faq-card { background: var(--card-bg); border-radius: 12px; padding: 25px; box-shadow: var(--glass-shadow); border-left: 4px solid var(--warning); }
+        .faq-card h4 { display: flex; align-items: center; gap: 10px; font-size: 1.1rem; color: var(--text); margin-bottom: 10px; }
+        .faq-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+        .map-container iframe { width: 100%; height: 350px; border: none; border-radius: 16px; box-shadow: var(--glass-shadow); }
+
+        @media (max-width: 992px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="main-navbar">
+        <div class="nav-logo">
+            <i class="fa-solid fa-notes-medical" style="color:var(--primary);"></i>
+            <span style="font-weight: 700; color: var(--primary);">MediCheck India</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="prediction.html">Prediction</a></li>
+            <li><a href="awareness.html">Awareness</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="contact-header">
+        <h1>Contact & FAQ</h1>
+        <div style="background: rgba(76, 175, 80, 0.1); padding: 15px 30px; border-radius: 50px; display: inline-flex; align-items: center; gap: 10px; color: var(--accent); font-weight: 500; font-size: 0.95rem; margin-bottom: 10px;">
+            <i class="fa-solid fa-bullseye"></i>
+            Project Mission: Fostering early awareness to drastically elevate childhood cancer survival rates.
+        </div>
+        <p>If you have questions about the underlying machine learning models, wish to speak to an administrator, or need guidance on dataset training, feel free to reach out to our team.</p>
+    </div>
+
+    <!-- 1 & 2. CONTACT FORM AND SUPPORT INFO -->
+    <section class="glass-panel" style="margin-top: 40px;">
+        <div class="contact-grid">
+            
+            <!-- Form -->
+            <div style="background: var(--card-bg); padding: 40px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                <h2 style="margin-bottom: 25px;"><i class="fa-regular fa-envelope"></i> Send a Message</h2>
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Message successfully sent! (Simulation)');">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="Jane Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="jane@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="5" placeholder="How can we help?" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="border:none; cursor:pointer; width:100%; justify-content:center; margin-top:10px;">Submit Inquiry</button>
+                </form>
+            </div>
+
+            <!-- Support Info -->
+            <div class="support-info">
+                <div class="info-card">
+                    <i class="fa-solid fa-headset"></i>
+                    <div>
+                        <h4>General Support</h4>
+                        <p>support@medicheck-ai.in</p>
+                        <p style="font-size: 0.85rem; margin-top:5px;">We reply within 24-48 business hours.</p>
+                    </div>
+                </div>
+
+                <div class="info-card" style="border-left-color: var(--danger); background: rgba(229, 57, 53, 0.05);">
+                    <i class="fa-solid fa-truck-medical" style="color: var(--danger);"></i>
+                    <div>
+                        <h4 style="color: var(--danger);">Emergency Guidance</h4>
+                        <p>Check the <a href="help.html" style="text-decoration:underline;">Help Page</a> for immediate national helpline numbers and triage steps.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 10px; padding: 0 15px;">
+                    <h4 style="color: var(--text); margin-bottom: 10px;">Join our Community</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/hasinimaddula26-tech" class="social-btn" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/maddula-hasini-074274320" class="social-btn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. FREQUENTLY ASKED QUESTIONS -->
+    <section class="glass-panel">
+        <h2 style="text-align:center; margin-bottom:40px;">Frequently Asked Questions</h2>
+        <div class="contact-grid">
+            <div class="faq-section">
+                <div class="faq-card">
+                    <h4><i class="fa-solid fa-circle-question" style="color:var(--warning);"></i> Is this a confirmed medical diagnosis?</h4>
+                    <p><strong>Absolutely not.</strong> This tool uses Machine Learning patterns simply to calculate if a subset of symptoms overlaps with known pediatric cancers. Only a hematologic laboratory sequence and a certified oncologist can officially diagnose cancer.</p>
+                </div>
+                <div class="faq-card">
+                    <h4><i class="fa-solid fa-circle-question" style="color:var(--warning);"></i> Why isn't model gender-specific?</h4>
+                    <p>To prevent algorithmic discrimination. Many healthcare models historically harbor deep biases regarding gender or demographics. We ensure the **Universal Baseline** considers only raw clinical indicators.</p>
+                </div>
+            </div>
+            <div class="faq-section">
+                <div class="faq-card" style="border-left-color: var(--primary);">
+                    <h4><i class="fa-solid fa-circle-question" style="color:var(--primary);"></i> How is the ML threshold set?</h4>
+                    <p>The "Low/Medium/High" boundaries rely on an ensemble hybrid model (`GradForest`). When highly predictive "red flag" symptoms (like severe bone pain waking a child at night) align, the urgency calculation spikes appropriately.</p>
+                </div>
+                <div class="faq-card" style="border-left-color: var(--primary);">
+                    <h4><i class="fa-solid fa-circle-question" style="color:var(--primary);"></i> Is my data saved?</h4>
+                    <p>No personal identifying data is logged. All checklist computations currently run securely inside your local browser context via JavaScript.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. EMBEDDED MAP -->
+    <section class="glass-panel">
+        <h2 style="margin-bottom: 20px;"><i class="fa-solid fa-map-pin"></i> Research Headquarters</h2>
+        <!-- Research hub text removed per user request -->
+        <div class="map-container">
+            <!-- OpenStreetMap Embed -->
+            <iframe 
+                src="https://www.openstreetmap.org/export/embed.html?bbox=77.10845947265626%2C28.539864273822185%2C77.34878540039064%2C28.685382220478083&amp;layer=mapnik" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- GLOBAL FOOTER -->
+    <footer class="main-footer">
+        <div style="margin-bottom:15px; font-weight:600; color:var(--primary);">MediCheck Pediatric Dashboard</div>
+        <p>👉 This system is for educational and awareness purposes only. It is not a substitute for professional medical advice.</p>
+    </footer>
+
+</body>
+</html>
