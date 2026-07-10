@@ -1,57 +1,66 @@
 # 🩺 MediCheck India
 
-An AI-assisted web application designed to support the **early detection of childhood cancer** by analyzing symptoms and providing an initial risk assessment. The platform also raises awareness about childhood cancer through educational content and visual analytics.
+An AI-assisted web application designed to support the early detection of childhood cancer through symptom-based assessment while promoting awareness with educational resources and interactive data visualization.
+
+> **Note:** This project was developed as a collaborative team project for academic purposes.
 
 🌐 **Live Demo:** https://medicheck-india.surge.sh/
 
 ---
 
-## 📌 Overview
+# 📌 Overview
 
-MediCheck India is an AI-powered healthcare awareness platform that helps parents and healthcare workers identify potential childhood cancer symptoms at an early stage.
+MediCheck India is an AI-assisted healthcare awareness platform that helps users perform a preliminary assessment of childhood cancer symptoms. The platform combines a simple symptom-based prediction system with awareness content and an interactive analytics dashboard to encourage early detection and public awareness.
 
-The application combines a symptom-based prediction system with awareness resources and an interactive dashboard to promote early diagnosis and informed decision-making.
-
-> **Disclaimer:** This application is intended for educational and awareness purposes only and should not replace professional medical diagnosis.
+> **Disclaimer:** This project is intended for educational and awareness purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment.
 
 ---
 
-## ✨ Features
+# ✨ Features
 
 - 🧒 Childhood cancer symptom assessment
 - 🤖 AI-assisted risk prediction
-- 📚 Cancer awareness and educational resources
+- 📚 Educational awareness about childhood cancer
 - 📊 Interactive analytics dashboard
 - 🗺️ India state-wise cancer visualization
-- 📱 Responsive user interface
-- 📞 Contact and support page
+- 📈 Charts and statistical insights
+- 📱 Responsive and user-friendly interface
+- 📞 Contact page for support and information
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
-### Frontend
+## Frontend
+
 - HTML5
 - CSS3
 - JavaScript
 
-### Machine Learning & Data
+## Machine Learning & Data Processing
+
 - Python
 - NumPy
 - Pandas
-- BloodMNIST Dataset
 
-### Dashboard & Visualization
-- Dash
+## Data Visualization
+
 - Plotly
+- Dash
 - Plotly Express
 
-### Deployment
+## Dataset
+
+- BloodMNIST Dataset
+- Sample Childhood Cancer Data
+
+## Deployment
+
 - Surge
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```
 MediaCheck/
@@ -63,56 +72,128 @@ MediaCheck/
 ├── app.js
 ├── styles.css
 ├── dashboard.py
+├── bloodmnist.npz
 ├── dataset/
 ├── images/
-├── bloodmnist.npz
+├── assets/
 └── README.md
 ```
 
 ---
 
-## 🚀 How It Works
+# 🚀 How It Works
 
-1. Users access the MediCheck platform.
+1. Users open the MediCheck application.
 2. They enter the child's symptoms.
-3. The system evaluates the symptoms using predefined logic.
-4. A preliminary risk assessment is displayed.
-5. Users can explore awareness resources and health information.
-6. The dashboard visualizes cancer-related statistics across India.
+3. The application evaluates the symptoms using predefined scoring logic.
+4. A preliminary risk assessment is generated.
+5. Users can explore awareness resources and healthcare information.
+6. The analytics dashboard provides visual insights into childhood cancer data.
 
 ---
 
-## 📊 Dashboard
+# 📊 Dashboard
 
-The project includes a Dash-based analytics dashboard that provides:
+The project includes an interactive dashboard built using Dash and Plotly that provides:
 
-- State-wise cancer distribution
-- Cancer type comparison
+- India state-wise cancer visualization
+- Statistical analysis
 - Interactive charts
-- Data visualization using Plotly
+- Data insights
+- Healthcare awareness visualizations
 
 ---
 
-## 📈 Future Improvements
+# 👥 Team Project
+
+This project was developed as a collaborative team project. Team members contributed to different parts of the application, including frontend development, dashboard creation, data visualization, testing, and overall project integration.
+
+---
+
+# 👨‍💻 My Contributions
+
+- Contributed to the development and integration of project features.
+- Assisted in frontend development using HTML, CSS, and JavaScript.
+- Participated in implementing and testing the symptom prediction module.
+- Contributed to debugging, testing, and deployment.
+- Collaborated with team members using Git and GitHub.
+
+---
+
+# 🏗️ Project Architecture
+
+```
+                User
+                  │
+                  ▼
+      Frontend (HTML/CSS/JavaScript)
+                  │
+                  ▼
+      Symptom Prediction Logic
+                  │
+                  ▼
+         Risk Assessment Result
+                  │
+                  ▼
+     Dashboard & Data Visualization
+                  │
+                  ▼
+          User Awareness & Insights
+```
+
+---
+
+
+# 🚀 Future Enhancements
 
 - Deep Learning-based image classification
-- Doctor appointment integration
 - Hospital recommendation system
+- Doctor appointment booking
 - User authentication
 - Medical report upload
-- Real-time healthcare APIs
 - Cloud database integration
+- Real-time healthcare APIs
+- Mobile application support
 
+---
 
-## 👨‍💻 Author
+# 💻 Installation
+
+Clone the repository
+
+git clone https://github.com/your-username/MediaCheck.git
+```
+
+Navigate to the project directory
+
+cd MediaCheck
+```
+
+Run the frontend by opening `index.html` in your browser.
+
+To launch the analytics dashboard:
+
+python dashboard.py
+```
+
+---
+
+# 📄 License
+
+This project is developed for educational and academic purposes.
+
+---
+
+# 👤 Author
 
 **Jalaganika Yarramsetti**
 
-- GitHub: https://github.com/24A31A0539
-- LinkedIn:https://www.linkedin.com/in/jalaganika-yarramsetti-ba506632b
+GitHub: https://github.com/24A31A0539
+
+LinkedIn: *(Add your LinkedIn profile here.)*
 
 ---
 
-## ⭐ Support
+# ⭐ Support
 
-If you found this project useful, consider giving it a ⭐ on GitHub.
+If you found this project helpful, consider giving the repository a ⭐ on GitHub.
