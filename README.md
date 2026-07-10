@@ -109,7 +109,7 @@ The project includes a Dash-based analytics dashboard that provides:
 **Jalaganika Yarramsetti**
 
 - GitHub: https://github.com/24A31A0539
-- LinkedIn: *(Add your LinkedIn profile)*
+- LinkedIn:https://www.linkedin.com/in/jalaganika-yarramsetti-ba506632b
 
 ---
 
