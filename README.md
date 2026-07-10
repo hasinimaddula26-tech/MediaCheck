@@ -190,7 +190,7 @@ This project is developed for educational and academic purposes.
 
 GitHub: https://github.com/24A31A0539
 
-LinkedIn: *(Add your LinkedIn profile here.)*
+LinkedIn: https://www.linkedin.com/in/jalaganika-yarramsetti-ba506632b
 
 ---
 
